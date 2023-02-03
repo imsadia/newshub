@@ -2,7 +2,6 @@ import React from 'react'
 
 function NewsItem(props) {
     const defaultImageUrl = 'https://media.cnn.com/api/v1/images/stellar/prod/230127123847-olympic-rings-paris.jpg?c=16x9&q=w_800,c_fill';
-    const defaultTitle = ''
     let { title, description, link, imageUrl } = props;
 
     return (
