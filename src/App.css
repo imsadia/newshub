@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #9DAAF2;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #29375B;
+}
+
+button, .btn {
+  background-color: #FF6A3D;
+  columns: #FFFFFF;
+  border: 1px solid #FF6A3D;
+}
