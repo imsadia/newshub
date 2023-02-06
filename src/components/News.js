@@ -87,8 +87,8 @@ function News(props) {
                 <div className="container my-4">
                     <div className="row">
                         {!loading && articles.map((element) => {
-                            return <div className="col-lg-4 col-md-4 col-sm-6 my-3 d-flex align-items-stretch" key={element.url}>
-                                <NewsItem title={element.title} description={element.description} link={element.url} imageUrl={element.urlToImage} author={element.author} publishedAt={element.publishedAt} />
+                            return <div className="col-lg-4 col-md-6 col-sm-6 my-3 d-flex align-items-stretch" key={element.url}>
+                                <NewsItem title={element.title} description={element.description} link={element.url} imageUrl={element.urlToImage} author={element.author} publishedAt={element.publishedAt} source={element.source.name} />
                             </div>
                         })}
                     </div>
