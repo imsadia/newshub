@@ -54,3 +54,11 @@ button, .btn {
 .card-title {
   color: #3b4ca8
 }
+
+.dropdown-menu-dark {
+  background-color: #1A2238;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #FFFFFF;
+}

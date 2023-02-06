@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import NewsItem from './NewsItem';
 import LoadingBar from 'react-top-loading-bar';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -96,6 +97,19 @@ function News(props) {
         </>
 
     )
+}
+
+
+News.defaultProps = {
+    pageSize: 9,
+    country: 'us',
+    category: 'everything',
+}
+
+News.propTypes = {
+    pageSize: PropTypes.number,
+    country: PropTypes.string,
+    category: PropTypes.string,
 }
 
 export default News
