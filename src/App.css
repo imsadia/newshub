@@ -47,6 +47,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 button, .btn {
   background-color: #FF6A3D;
-  columns: #FFFFFF;
+  color: #FFFFFF;
   border: 1px solid #FF6A3D;
+}
+
+.card-title {
+  color: #3b4ca8
 }
