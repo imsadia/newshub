@@ -19,7 +19,7 @@ function NewsItem(props) {
             <div className="card-body">
                 <h5 className="card-title">{title ? title.slice(0, 50) : description.slice(0, 50)}...</h5>
                 <p className="card-text">{description ? description.slice(0, 100) : title}...</p>
-                <a href={link} className="btn btn-sm" target="_blank">Read More &#187;</a>
+                <a href={link} className="btn btn-sm" target="_blank" rel="noreferrer">Read More &#187;</a>
             </div>
             <div className="card-footer">
                 <small style={{ float: 'right', color: '#1A2238' }}>Published by <strong>{author ? author : "Unknown"}</strong> - <strong className='text-danger'>{moment(publishedAt).fromNow()}</strong></small>

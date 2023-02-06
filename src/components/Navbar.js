@@ -16,7 +16,7 @@ function Navbar(props) {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <Link className={`nav-link ${useLocation().pathname.length == 1 && 'active'}`} to="/">Home</Link>
+                            <Link className={`nav-link ${useLocation().pathname.length === 1 && 'active'}`} to="/">Home</Link>
                             <Link className={`nav-link ${useLocation().pathname.includes('general') && 'active'}`} to="/general">General</Link>
                             <Link className={`nav-link ${useLocation().pathname.includes('entertainment') && 'active'}`} to="/entertainment">Entertainment</Link>
                             <Link className={`nav-link ${useLocation().pathname.includes('business') && 'active'}`} to="/business">Business</Link>
