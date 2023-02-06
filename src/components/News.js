@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import NewsItem from './NewsItem'
-import LoadingBar from 'react-top-loading-bar'
+import React, { useEffect, useState } from 'react';
+import NewsItem from './NewsItem';
+import LoadingBar from 'react-top-loading-bar';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Spinner from './Spinner';
 
 function News(props) {
     // Initialize all state variables
@@ -61,9 +63,11 @@ function News(props) {
     }
 
     return (
-        <div className="container my-4">
+        <>
             <h1 className="text-center my-5">NewsHub - {capitalizeFirstLetter(props.category)}</h1>
+            {loading && <Spinner />}
 
+            {/* TOP LOADING BAR */}
             <LoadingBar
                 height={3}
                 color='#FF6A3D'
@@ -71,14 +75,26 @@ function News(props) {
                 onLoaderFinished={() => setProgress(0)}
             />
 
-            <div className="row">
-                {!loading && articles.map((element) => {
-                    return <div className="col-lg-4 col-md-4 col-sm-6 my-3 d-flex align-items-stretch" key={element.url}>
-                        <NewsItem title={element.title} description={element.description} link={element.url} imageUrl={element.urlToImage} author={element.author} publishedAt={element.publishedAt} />
+
+            {/* INFINITE SCROLLER */}
+            <InfiniteScroll
+                dataLength={articles.length} //This is important field to render the next data
+                next={fetchMoreNews}
+                hasMore={articles.length !== totalResults}
+                loader={<Spinner />}
+            >
+                <div className="container my-4">
+                    <div className="row">
+                        {!loading && articles.map((element) => {
+                            return <div className="col-lg-4 col-md-4 col-sm-6 my-3 d-flex align-items-stretch" key={element.url}>
+                                <NewsItem title={element.title} description={element.description} link={element.url} imageUrl={element.urlToImage} author={element.author} publishedAt={element.publishedAt} />
+                            </div>
+                        })}
                     </div>
-                })}
-            </div>
-        </div>
+                </div>
+            </InfiniteScroll >
+        </>
+
     )
 }
 
