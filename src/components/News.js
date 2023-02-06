@@ -52,7 +52,7 @@ function News(props) {
     };
 
     useEffect(() => {
-        // document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+        document.title = `${capitalizeFirstLetter(props.category)} - NewsHub`;
 
         fetchNews();
         // eslint-disable-next-line
@@ -64,7 +64,7 @@ function News(props) {
 
     return (
         <>
-            <h1 className="text-center my-5">NewsHub - {capitalizeFirstLetter(props.category)}</h1>
+            <h1 className="text-center mb-4 mt-5">NewsHub - {capitalizeFirstLetter(props.category)}</h1>
             {loading && <Spinner />}
 
             {/* TOP LOADING BAR */}
